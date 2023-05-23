@@ -1,0 +1,14 @@
+<div class="main-grid">
+  <header>
+    <fa-icon [icon]="faBars" (click)="toggleIsOpen()"></fa-icon>
+    <h1>PayWave</h1>
+  </header>
+  <div class="outlet-div">
+    <nav *ngIf="isOpen" [ngClass]="{ 'nav-toggle': isOpen }" (mouseleave)="mouseLeaved()">
+      <app-navbar></app-navbar>
+    </nav>
+    <section [ngClass]="{ 'isOpen': isOpen }">
+      <router-outlet></router-outlet>
+    </section>
+  </div>
+</div>

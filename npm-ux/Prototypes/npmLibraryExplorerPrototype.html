@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en" style="width: 100%; height: 90%;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+        src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./npmLibraryExplorerPrototype.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./npmLibraryExplorerPrototype.js"></script>
+    
+    <title>Npm Library Explorer</title>
+</head>
+<body>
+    <div id="landing-page" class="grid">
+        <div class="home-page" id="wrapper">
+            <div class="form-control">
+                <a>
+                    <span class="npm_-_master_-_header">NPM LIBRARY EXPLORER</span>
+                </a>
+            </div>
+            <div class="btn_-_list">
+                <a type="button" class="btn" id="npm-resgistry-btn">Npm Registry Status Monitor</a>
+                <a type="button" class="btn" id="library-info-btn">Library Info Hub</a>
+                <a type="button" class="btn" id="library-search-btn">Npm Library Search</a>
+            </div>
+        </div>
+    
+        <div id="npm-status-monitor">
+             <div class="library-grid3">
+                <div class="status">
+                    <div class="status-info">
+                        <h2 class="status-header">uuid</h2>
+                        <span class="status-info_-_details">3a4ad341a4111dd254daa731f37b37ae</span>
+                    </div>
+                    <div class="status-info">
+                        <h2 class="status-header">db_name</h2>
+                        <span class="status-info_-_details">registry</span>
+                    </div>
+                    <div class="status-info">
+                        <h2 class="status-header">engine</h2>
+                        <span class="status-info_-_details">couch_bt_engine</span>
+                    </div>
+                </div>
+                <div class="btn_-_list">
+                    <a type="button" class="btn" id="home-page-btn-2">Home Page</a>
+                    <a type="button" class="btn" id="library-info-btn-2">Library Info Hub</a>
+                </div>
+              </div>
+        </div>
+    
+        <div id="library-info-hub">
+              <div class="library-grid2">
+                <div class="form-control">
+                     
+                    <input placeholder="Search" class="input-user" label="input de pesquisar"/>
+          
+                </div>
+                <div class="status">
+                    <div class="status-info">
+                        <h2 class="status-header">name</h2>
+                        <span class="status-info_-_details">electronic</span>
+                    </div>
+                    <div class="status-info">
+                        <h2 class="status-header">description</h2>
+                        <span class="status-info_-_details">Promise based HTTP client for the browser and node.js</span>
+                    </div>
+                    <div class="status-info">
+                        <h2 class="status-header">Dist Tags</h2>
+                        <span class="status-info_-_details">latest: 1.3.6, next: 1.2.0-alpha.1</span>
+                    </div>
+                    <div class="status-info">
+                        <h2 class="status-header">latest version</h2>
+                        <span class="status-info_-_details">axios 1.3.6</span>
+                    </div>
+                    <div class="status-info">
+                        <h2 class="status-header"> homepage</h2>
+                        <span class="status-info_-_details">Lorem ipsum</span>
+                    </div>
+                    <div class="status-info">
+                        <h2 class="status-header"> License for Latest Version</h2>
+                        <span class="status-info_-_details">MIT</span>
+                    </div>
+                </div>
+                <div class="btn_-_list">
+                    <a type="button" class="btn" id="home-page-btn-3">Home Page</a>
+                    <a type="button" class="btn" id="library-search-btn-2">Npm Library Search Page</a>
+                </div>
+              </div>
+        </div>
+    
+        <div id="npm_library_search_page">
+                <div class="library-grid2">
+                <div class="form-control">
+                     
+                    <input placeholder="Search" class="input-user" label="input de pesquisar"/>
+          
+                </div>
+                <div class="status">
+                    <div class="status-info">
+                        <h2 class="status-header">Package_name</h2>
+                        <span class="status-info_-_details">axios, ,superagent, 
+                            ,axios-mock-adapter, ,got, ,node-libcurl, ,vue-axios,</span>
+                    </div>
+                    <div class="status-info">
+                        <h2 class="status-header">Package_description</h2>
+                        <span class="status-info_-_details">Promise based HTTP client for the browser and node.js, 
+                            ,elegant & feature rich browser / node HTTP with a fluent API, ,Axios adapter that allows to easily mock requests, 
+                            ,Human-friendly and powerful HTTP request library for Node.js, 
+                            ,The fastest http(s) client (and much more) for Node.js - Node.js bindings for libcurl, 
+                            ,A small wrapper for integrating axios to Vuejs,</span>
+                    </div>
+                    <div class="status-info">
+                        <h2 class="status-header">Package Keywords</h2>
+                        <span class="status-info_-_details">Promise based HTTP client for the browser and node.js
+                        elegant & feature rich browser / node HTTP with a fluent API
+                        Axios adapter that allows to easily mock requests
+                        Human-friendly and powerful HTTP request library for Node.js
+                        The fastest http(s) client (and much more) for Node.js - Node.js bindings for libcurl
+                        A small wrapper for integrating axios to Vuejs</span>
+                    </div>
+                </div>
+                <div class="btn_-_list">
+                    <a type="button" class="btn" id="home-page-btn-4">Home Page</a>
+                    <a type="button" class="btn" id="npm-status-monitor-btn-2">Npm Status monitor</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

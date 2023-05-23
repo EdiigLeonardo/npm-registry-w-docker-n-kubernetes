@@ -1,0 +1,128 @@
+$cetelemColor: #9ac433;
+$mileniumColor: #dc3545;
+
+:host{
+  width: 100%;
+  height: 100%;
+}
+
+.cards_main{
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  span{
+    margin-bottom: 10px;
+  }
+}
+.cards_name{
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  .one_card{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-height: 180px;
+    min-width: 200px;
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+    position: relative;
+
+    &.bpi{
+      background: #F60;
+
+      &:hover{
+        outline: 5px solid #F60;;
+        border: 5px solid #3a3b3c;
+        background-color: #e25c02;
+      }
+    }
+
+    &.moey{
+      background: #42c48c;
+
+      &:hover{
+        outline: 5px solid #42c48c;
+        border: 5px solid #3a3b3c;
+        background-color: #32976c;
+      }
+    }
+
+    &.cetelem{
+      background-color: $cetelemColor;
+      &:hover{
+        outline: 5px solid $cetelemColor;
+        border: 5px solid #3a3b3c;
+        background-color: #7a992a;
+      }
+
+    }
+
+    &.milenium{
+      background-color: $mileniumColor;
+      &:hover{
+        outline: 5px solid $mileniumColor;
+        border: 5px solid #3a3b3c;
+        background-color: #8d222d;
+      }
+
+    }
+
+    span{
+
+    }
+    &.editar_cartao{
+      &:hover::after{
+        content: "Ver Detalhes do Cartão";
+        font-size: 1 em;
+        color: var(--white);
+        position: absolute;
+        background-color: transparent;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    &.adicionar_cartao{
+      border: 1px solid #262627;
+      position: relative;
+      background-color: #202020;
+
+      &:hover{
+        outline: 5px solid #0070ad;
+        border: 5px solid #3a3b3c;
+        background-color: #0f0f0f;
+      }
+
+      .ng-fa-icon{
+        position: absolute;
+        background-color: transparent;
+        top: 50%;
+        left: 50%;
+        font-size: 4em;
+        color: #0070ad;
+        transform: translate(-50%, -50%);
+      }
+
+      &:hover::after{
+        content: "Adiconar Cartão";
+        font-size: 1 em;
+        color: var(--white);
+        position: absolute;
+        background-color: transparent;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+
+.uppercase{
+  text-transform: uppercase;
+}

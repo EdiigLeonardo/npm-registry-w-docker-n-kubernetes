@@ -1,0 +1,48 @@
+<title>My Wave</title>
+<div class="main-mywave">
+  <div class="mywave">
+    <h1>{{this.mainMoney}} €</h1>
+    <span>Total de Goals {{this.mainGoals}} €</span>
+    <div class="mywave-center">
+      <div class="last-moves">
+        <div class="see-everything-container space">
+          <span class="span_customs">Últimos Movimentos</span>
+          <a class="see-everything-btn space" (click)="toggleCollapsed()">{{isCollapsed ? 'Ocultar' : 'Ver tudo'}}</a>
+        </div>
+        <div class="payments-lines">
+          <fa-icon [icon]="faCircleArrowDown"></fa-icon>
+          <span>Pagamentos...</span>
+          <span>-112.88€</span>
+        </div>
+
+        <div class="payments-lines" >
+          <fa-icon [icon]="faCircleArrowUp"></fa-icon>
+          <span>De ISCTE</span>
+          <span>1000.88€</span>
+        </div>
+        <div class="payments-lines" *ngIf="isCollapsed">
+          <fa-icon [icon]="faCircleArrowUp"></fa-icon>
+          <span>Capgemini Eng...</span>
+          <span>1158.88€</span>
+        </div>
+        <div class="payments-lines" *ngIf="isCollapsed">
+          <fa-icon [icon]="faCircleArrowDown"></fa-icon>
+          <span>Pagamentos...</span>
+          <span>-300.88€</span>
+        </div>
+        <div class="payments-lines" *ngIf="isCollapsed">
+          <fa-icon [icon]="faCircleArrowDown"></fa-icon>
+          <span>Pagamentos...</span>
+          <span>-760.88€</span>
+        </div>
+
+        <div class="payments-lines" *ngIf="isCollapsed">
+          <fa-icon [icon]="faCircleArrowDown"></fa-icon>
+          <span>Pagamentos...</span>
+          <span>-112.88€</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

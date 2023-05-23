@@ -1,0 +1,117 @@
+:root {
+  --blue-primary: #0070ad;
+  --blue-light: #8eb9e1;
+  --blue-lightest: #e4eef7;
+  --gray-light: #242526;
+  --white: #e4e6eb;
+  --black-light: #161616;
+}
+
+:host{
+
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3{
+  font-family: "Ubuntu";
+  font-weight: 500;
+  line-height: 48px;
+  color: #006dad;
+  letter-spacing: .12px;
+}
+
+h1{
+  font-size: 2.5rem;
+}
+
+
+.main-grid {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 40px;
+  background: #242526;
+}
+
+header{
+  color: #e4e6eb;
+  background-color: #242526;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  min-height: 60px;
+  z-index: 2;
+  border-bottom: 1px solid #303030;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+
+  .ng-fa-icon{
+    font-size: 1.9em;
+    cursor: pointer;
+
+    &:hover{
+      color:#006dad;
+    }
+  }
+}
+
+
+
+.outlet-div {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  position: relative;
+  color:  #e4e6eb;
+
+  nav {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    width: 250px;
+    min-height: 100%;
+    color: #e4e6eb;
+    background-color: #242526;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    box-shadow: inset -200px -155px 40px -192px #303030;
+    transition: 300ms ease-in-out;
+    z-index: 10;
+  }
+
+  section {
+    display: flex;
+    flex: 1; // Ocupa o espaço restante
+    width: 100%;
+    margin-top: 80px;
+  }
+}
+
+/* .isOpen{
+  margin-left: 300px;
+} */
+
+.nav-toggle {
+  transition: transform 0.5s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}

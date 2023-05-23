@@ -1,0 +1,218 @@
+
+:host{
+  width: 100%;
+  height: 100%;
+
+}
+
+.in_out_main{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* height: 100%; */
+    font-size: 1.1rem;
+
+    h1{
+      display: flex;
+      justify-self: center;
+      align-self: flex-start;
+    }
+
+  .in_out_container{
+    width: 80%;
+    background-color: #242526;
+    border-radius: 10px;
+    min-height: 151px;
+    padding: 10px;
+    .inside_container{
+      background-color: #3a3b3c;
+      color: #c6c6c6;
+      padding: 10px;
+      border-radius: 10px;
+
+      .line_w_icon{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        padding: 10px;
+        min-height: 54px;
+
+        &:hover{
+          border: 1px solid #c6c6c6;
+          border-radius: 10px;
+          transform: scaleX(-3px);
+          transition: 300ms ease-in-out;
+          -webkit-box-shadow: 13px 16px 32px 2px #3a3b3c;
+          box-shadow: 13px 16px 32px 2px #3a3b3c;
+        }
+      }
+
+    }
+  }
+
+  .modal_wrap{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 500px;
+    min-height: 300px;
+    /* max-width: 600px; */
+    /* max-height: 300px; */
+    height: 600px;
+    width: 600px;
+    z-index: 25;
+    background-color: #3a3b3c;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.2em;
+
+    &:hover{
+      outline: 5px solid #0070ad;
+      border: 5px solid #3a3b3c;
+    }
+
+    .container_{
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      height: 100%;
+      width: 100%;
+      padding: 5px;
+      background-color: #303030;
+
+      .modal_container_up{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        height: 50%;
+        min-height: 50%;
+
+        .money_n_iban{
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+          gap: 5px;
+          background-color: #3a3b3c;
+          padding: 5px;
+
+          .money_value{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex:  1;
+
+            input{
+              display: flex;
+              width: min-content;
+              width: 50px;
+              max-width: 300px;
+            }
+
+          }
+        }
+
+      }
+      .modal_container_down{
+        display: flex;
+        justify-content: space-between;
+        height: 25%;
+        min-height: 25%;
+        gap: 5px;
+        flex: 1;
+        background-color: #34373a;
+      }
+      .modal_footer{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-height: 25%;
+        background-color: #34373a;
+        position: relative;
+      }
+    }
+  }
+
+  .modal_background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.8;
+    background-color: #000000;
+    z-index: 24;
+    cursor: pointer;
+    filter: blur(10px);
+
+    .icon_footer{
+      font-size: 1.4em !important;
+      .transfer_icon_pass{
+        .ng-fa-icon{
+
+        }
+      }
+    }
+  }
+
+  input{
+    display: flex;
+    padding: 5px;
+    border-radius: 3px;
+    border-bottom: 1px solid #57595a;
+
+    &::placeholder{
+      text-align: center;
+    }
+
+  }
+
+}
+
+.span-hide{
+  color: transparent;
+}
+
+a{
+  cursor: pointer;
+}
+
+input{
+  all: unset;
+  font-family: "Ubuntu", sans-serif;
+  background-color: #3a3b3c;
+  color: #e4e6eb;
+  &::placeholder {
+    color: #e4e6eb; // Defina a cor desejada para o placeholder
+  }
+}
+
+.icon_size{
+  color: #e4e6eb;
+  font-size: 3em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.transfer_icon_pass{
+  position: absolute;
+  bottom: 5px;
+  right: 15px;
+  background-color:  #0070ad;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover{
+    background-color:  #015886;
+  }
+}

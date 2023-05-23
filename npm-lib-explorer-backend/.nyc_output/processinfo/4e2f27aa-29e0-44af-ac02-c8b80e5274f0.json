@@ -1,0 +1,1 @@
+{"parent":null,"pid":6023,"argv":["/usr/bin/node","/usr/bin/npm","test"],"execArgv":[],"cwd":"/home/vagrant/edig.leonardo/rest-api","time":1679428278577,"ppid":6010,"coverageFilename":"/home/vagrant/edig.leonardo/rest-api/.nyc_output/4e2f27aa-29e0-44af-ac02-c8b80e5274f0.json","externalId":"","uuid":"4e2f27aa-29e0-44af-ac02-c8b80e5274f0","files":[]}

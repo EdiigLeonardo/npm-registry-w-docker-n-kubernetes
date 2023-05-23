@@ -1,0 +1,20 @@
+<div class="ul-container" (mouseenter)="onHover(true)" (mouseleave)="onHover(false)" (mouseleave)="onMouseLeave()">
+  <div class="nav_-_icons" [routerLink]="['/homepage']"  routerLinkActive="active">
+    <fa-icon [icon]="faHouseChimneyCrack"></fa-icon>
+    <a>My PayWave</a>
+  </div>
+  <div class="nav_-_icons"  [routerLink]="['/inout']" routerLinkActive="active">
+
+    <fa-icon [icon]="faArrowsSpin"></fa-icon>
+    <a>Movimentos</a>
+  </div>
+  <div class="nav_-_icons" [routerLink]="['/cards']" routerLinkActive="active">
+    <fa-icon [icon]="faCreditCard"></fa-icon>
+    <a>Cartões</a>
+  </div>
+  <div class="nav_-_icons"  [routerLink]="['/goals']" routerLinkActive="active">
+    <fa-icon [icon]="faPiggyBank"></fa-icon>
+    <a>Objectivos</a>
+  </div>
+    <a>More</a>
+</div>

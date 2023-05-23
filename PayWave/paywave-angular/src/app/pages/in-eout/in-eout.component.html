@@ -1,0 +1,109 @@
+
+<div class="in_out_main">
+  <h1>IN & OUT</h1>
+  <div class="in_out_container">
+    <h2>OUT</h2>
+    <div class="inside_container">
+      <div class="line_w_icon" (click)="openModal()">
+        <span><fa-icon [icon]="faArrowDown"></fa-icon></span>
+        <span>Enviar dinheiro</span>
+        <span class="span-hide">icon</span>
+      </div>
+      <a class="line_w_icon">
+        <span><fa-icon [icon]="faMoneyBills"></fa-icon></span>
+        <span>Pagamentos</span>
+        <span class="span-hide">icon</span>
+      </a>
+      <div class="line_w_icon">
+        <span><fa-icon [icon]="faArrowDown"></fa-icon></span>
+        <span>Levantar dinheiro</span>
+        <span class="span-hide">icon</span>
+      </div>
+      <div class="line_w_icon">
+        <span><fa-icon [icon]="faMoneyBill1Wave"></fa-icon></span>
+        <span>Pagar com MBway / PayPal</span>
+        <span class="span-hide">icon</span>
+      </div>
+    </div>
+    <h2>IN</h2>
+    <div class="inside_container">
+      <div class="line_w_icon">
+        <span><fa-icon [icon]="faPlus"></fa-icon></span>
+        <span>Reforço de Conta</span>
+        <span class="span-hide">icon</span>
+      </div>
+      <div class="line_w_icon">
+        <span><fa-icon [icon]="faHandsPraying"></fa-icon></span>
+        <span>Pedir Dinheiro</span>
+        <span class="span-hide">icon</span>
+      </div>
+      <div class="line_w_icon">
+        <span><fa-icon [icon]="faHandshake"></fa-icon></span>
+        <span>Dividir Conta</span>
+        <span class="span-hide">icon</span>
+      </div>
+      <div class="line_w_icon">
+        <span><fa-icon [icon]="faArrowDown"></fa-icon></span>
+        <span>Pagar com MBway</span>
+        <span class="span-hide">icon</span>
+      </div>
+    </div>
+    <h2>OTHERS</h2>
+    <div class="inside_container">
+      <div class="line_w_icon">
+        <span>icon</span>
+        <span>Reforço de Conta</span>
+        <span class="span-hide">icon</span>
+      </div>
+      <div class="line_w_icon">
+        <span>icon</span>
+        <span>Utilizar Multibanco</span>
+        <span class="span-hide">icon</span>
+      </div>
+      <div class="line_w_icon">
+        <span>icon</span>
+        <span>Favoritos</span>
+        <span class="span-hide">icon</span>
+      </div>
+      <div class="line_w_icon">
+        <span>icon</span>
+        <span>Pagar com MBway</span>
+        <span class="span-hide">icon</span>
+      </div>
+      <div class="line_w_icon">
+        <span>icon</span>
+        <span>Débitos Direitos</span>
+        <span class="span-hide">icon</span>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="modal_aberto" class="modal_wrap">
+    <div class="container_">
+      <div class="modal_container_up">
+        <div class="money_n_iban">
+          <div class="money_value">
+            <input placeholder="0€" [(ngModel)]="valores.value"/>
+          </div>
+          <input placeholder="Insira o Nome (p.e: João Pedro de Matos)" type="text" [(ngModel)]="valores.name"/>
+          <input placeholder="Insira o IBAN (p.e: PT50 0000 0000 ...) " [(ngModel)]="valores.iban"/>
+        </div>
+      </div>
+      <div class="modal_container_down">
+        <span>Limite Máximo por Operação <span class="operation_type">Tranf... por o IBAN</span> 750€</span>
+      </div>
+      <div class="modal_footer">
+        <span>Saldo: {{saldo}} €</span>
+        <span>Custo (Inclui Imposto de Selo): gratuito</span>
+        <div class="icon_footer">
+        <a class="transfer_icon_pass" (click)="submitValues()">
+          <fa-icon [icon]="faArrowRight" class="ng_fa_icon_absolute icon_size"></fa-icon>
+        </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal_background" *ngIf="modal_aberto" (click)="youClickedOut()">
+  </div>
+  <span class="botao_de_saida"></span>
+</div>
