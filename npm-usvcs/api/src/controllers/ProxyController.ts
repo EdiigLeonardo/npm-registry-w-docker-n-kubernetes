@@ -45,7 +45,7 @@ export class PackageInfoController extends Controller{
     @Get("/")
     public async getPackageInfo(): Promise<any> {
         let data: string = "";
-        const url : string = "https://registry.npmjs.org/"
+        const url : string = "http://registry.npmjs.org/"
         await axios.get(url).then(
                 response => {
                 data = response.data;
@@ -59,7 +59,7 @@ export class PackageInfoController extends Controller{
 
     @Get('/{text}')
     public async getInfo(@Path() text: string): Promise<any> {
-        const url = `https://registry.npmjs.org/${text}`;
+        const url = `http://registry.npmjs.org/${text}`;
         try {
         const response = await axios.get(url);
         return response.data;
@@ -70,7 +70,7 @@ export class PackageInfoController extends Controller{
 
     @Get('search/{searchText}')
     public async searchPackage(@Path() searchText: string): Promise<any> {
-        const url = `https://registry.npmjs.org/-/v1/search?text=${searchText}`;
+        const url = `http://registry.npmjs.org/-/v1/search?text=${searchText}`;
         try {
         const response = await axios.get(url);
         return response.data;

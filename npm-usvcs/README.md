@@ -1,6 +1,6 @@
 # Intro
 
-It's assumed the git repository is cloned in ```~/edig.leonardo``` .
+It's assumed the git repository is cloned in ```npm-registry-w-docker-n-kubernetes``` .
 
 # Create account Docker Hub
 
@@ -18,7 +18,7 @@ To use the limit associated with the email it's required to run the command ```d
 # Cleanup k3s and docker registry (optional)
 
 ```sh
-cd ~/edig.leonardo/npm-usvcs
+cd npm-registry-w-docker-n-kubernetes/npm-usvcs
 kubectl delete -f spa-ingress.yml
 kubectl delete -f angular-app-ingress.yml
 kubectl delete -f api-ingress.yml 
@@ -92,7 +92,7 @@ exit
 # Build and run REST API
 
 ```sh
-cd ~/edig.leonardo/npm-usvcs/api
+cd npm-registry-w-docker-n-kubernetes/npm-usvcs/api
 docker build -t api-image .
 docker tag api-image localhost:5000/api-image
 docker push localhost:5000/api-image
@@ -131,7 +131,7 @@ npm install --force
 ```
 
 ```sh
-cd ~/edig.leonardo/npm-usvcs/spa
+cd npm-registry-w-docker-n-kubernetes/npm-usvcs/spa
 docker build -t spa-image .
 docker tag spa-image localhost:5000/spa-image
 docker push localhost:5000/spa-image
@@ -165,7 +165,7 @@ npm install
 ## Building a image to Docker:
 
 ```sh
-cd ~/edig.leonardo/npm-usvcs/angular-app
+cd npm-registry-w-docker-n-kubernetes/npm-usvcs/angular-app
 docker build -t angular-app-image .
 docker tag angular-app-image localhost:5000/angular-app-image
 docker push localhost:5000/angular-app-image
@@ -190,8 +190,8 @@ sleep 15
 
 With pass phrase ```12345678```.
 ```sh
-mkdir ~/edig.leonardo/npm-usvcs/certs
-cd ~/edig.leonardo/npm-usvcs/certs
+mkdir npm-registry-w-docker-n-kubernetes/npm-usvcs/certs
+cd npm-registry-w-docker-n-kubernetes/npm-usvcs/certs
 openssl genrsa -des3 -out localCA.key 2048
 #Generating RSA private key, 2048 bit long modulus (2 primes)
 #..........+++++
@@ -225,7 +225,7 @@ openssl req -x509 -new -nodes -key localCA.key -sha256 -days 1825 -out localCA.p
 #  localCA.key (your private key) and localCA.pem (your root certificate).
 
 ```sh
-sudo cp ~/edig.leonardo/npm-usvcs/certs/localCA.pem /usr/local/share/ca-certificates/localCA.crt
+sudo cp npm-registry-w-docker-n-kubernetes/npm-usvcs/certs/localCA.pem /usr/local/share/ca-certificates/localCA.crt
 sudo update-ca-certificates
 
 awk -v cmd='openssl x509 -noout -subject' '/BEGIN/{close(cmd)};{print | cmd}' < /etc/ssl/certs/ca-certificates.crt | grep Bugs
@@ -293,7 +293,7 @@ openssl x509 -req -in api-local.csr -CA localCA.pem -CAkey localCA.key -CAcreate
 kubectl delete secret k3s-tls-api-local
 kubectl create secret tls k3s-tls-api-local --namespace default --key api-local.key --cert api-local.crt
 sleep 5
-cd ~/edig.leonardo/npm-usvcs/
+cd npm-registry-w-docker-n-kubernetes/npm-usvcs/
 kubectl apply -f api-ingress.yml
 sleep 5
 curl api.local
@@ -309,7 +309,7 @@ curl https://api.local
 ## Create certificate and private key (spa-local.crt and spa-local.key)
 
 ```sh
-cd ~/edig.leonardo/npm-usvcs/certs
+cd npm-registry-w-docker-n-kubernetes/npm-usvcs/certs
 openssl genrsa -out spa-local.key 2048
 ```
 
@@ -366,7 +366,7 @@ kubectl delete secret k3s-tls-spa-local
 kubectl create secret tls k3s-tls-spa-local --namespace default --key spa-local.key --cert spa-local.crt
 sleep 5
 
-cd ~/edig.leonardo/npm-usvcs
+cd npm-registry-w-docker-n-kubernetes/npm-usvcs
 kubectl apply -f spa-ingress.yml
 sleep 120
 curl spa.local
@@ -382,7 +382,7 @@ curl https://spa.local
 ## Create certificate and private key (angular-app-local.crt and angular-app-local.key)
 
 ```sh
-cd ~/edig.leonardo/npm-usvcs/certs
+cd npm-registry-w-docker-n-kubernetes/npm-usvcs/certs
 openssl genrsa -out angular-app-local.key 2048
 ```
 
@@ -439,7 +439,7 @@ kubectl delete secret k3s-tls-angular-app-local
 kubectl create secret tls k3s-tls-angular-app-local --namespace default --key angular-app-local.key --cert angular-app-local.crt
 sleep 5
 
-cd ~/edig.leonardo/npm-usvcs
+cd npm-registry-w-docker-n-kubernetes/npm-usvcs
 kubectl apply -f angular-app-ingress.yml
 sleep 120
 curl angular-app.local
@@ -459,7 +459,7 @@ curl https://angular-app.local
    * Certificates
    * View certificates
    * Tab authorities
-   * Import, ~/edig.leonardo/npm-usvcs/certs/localCA.pem
+   * Import, npm-registry-w-docker-n-kubernetes/npm-usvcs/certs/localCA.pem
    * Trust for: websites, email
    * OK
  * Open https://api.local
@@ -476,7 +476,7 @@ curl https://angular-app.local
    * Security
    * Manage certificates
    * Tab authorities
-   * Import, ~/edig.leonardo/npm-usvcs/certs/localCA.pem 
+   * Import, npm-registry-w-docker-n-kubernetes/npm-usvcs/certs/localCA.pem 
    * Trust for: websites, email and software makers
    * OK 
  * Open https://api.local 
@@ -495,7 +495,7 @@ curl https://angular-app.local/
 # Rollout, apply new image for spa
 
 ```sh
-cd ~/edig.leonardo/npm-usvcs/spa
+cd npm-registry-w-docker-n-kubernetes/npm-usvcs/spa
 nano src/App.tsx # change number after Edit 
 git diff # see differences 
 # build tag and push image to local docker registry
@@ -515,7 +515,7 @@ kubectl get pods -o wide # container creating, age very small (units in seconds)
 # Rollout, apply new image for angular-app
 
 ```sh
-cd ~/edig.leonardo/npm-usvcs/angular-app
+cd npm-registry-w-docker-n-kubernetes/npm-usvcs/angular-app
 nano src/App.tsx # change number after Edit 
 git diff # see differences 
 

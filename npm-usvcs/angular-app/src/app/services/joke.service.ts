@@ -6,7 +6,7 @@ import { Joke } from '../models';
   providedIn: 'root'
 })
 export class JokeService {
-  private API_BASE_URL = 'https://api.chucknorris.io';
+  private API_BASE_URL = 'http://api.chucknorris.io';
   interval5Secs: Observable<number>;
   publishJoke: Subject<string>;
 
